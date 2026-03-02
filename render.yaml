@@ -1,0 +1,30 @@
+services:
+  - type: web
+    name: ebirth-backend
+    runtime: java
+    plan: free
+    rootDir: .
+    buildCommand: ./mvnw clean package -DskipTests
+    startCommand: java -jar target/ebirth-0.0.1-SNAPSHOT.jar
+    healthCheckPath: /api/birth/all
+    envVars:
+      - key: SPRING_DATASOURCE_URL
+        fromDatabase:
+          name: ebirth-db
+          property: connectionString
+      - key: SPRING_DATASOURCE_USERNAME
+        fromDatabase:
+          name: ebirth-db
+          property: user
+      - key: SPRING_DATASOURCE_PASSWORD
+        fromDatabase:
+          name: ebirth-db
+          property: password
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
+      - key: SPRING_JPA_SHOW_SQL
+        value: false
+
+databases:
+  - name: ebirth-db
+    plan: free

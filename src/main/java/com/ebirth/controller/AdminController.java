@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/admin")
 @CrossOrigin(
-        origins = {"http://localhost:5173", "http://localhost:3000"},
+        originPatterns = {"http://localhost:5173", "http://localhost:3000", "https://*.onrender.com"},
         allowCredentials = "true"
 )
 public class AdminController {

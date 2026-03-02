@@ -21,7 +21,7 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/api/birth")
 @CrossOrigin(
-        origins = {"http://localhost:5173", "http://localhost:3000"},
+        originPatterns = {"http://localhost:5173", "http://localhost:3000", "https://*.onrender.com"},
         allowCredentials = "true"
 )
 public class BirthInfoController {
