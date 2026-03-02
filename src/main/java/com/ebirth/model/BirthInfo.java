@@ -31,6 +31,20 @@ public class BirthInfo {
 
     private String comment;
 
+    @Lob
+    @Column(name = "uploaded_certificate_data")
+    private byte[] uploadedCertificateData;
+
+    private String uploadedCertificateName;
+
+    private String uploadedCertificateContentType;
+
+    @Lob
+    @Column(name = "generated_certificate_data")
+    private byte[] generatedCertificateData;
+
+    private String generatedCertificateName;
+
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "user_id")   // foreign key clear
     private User submittedBy;

@@ -15,4 +15,7 @@ public class BirthInfoResponse {
     public String comment;
     public Long submittedById;
     public String submittedByName;
+    public boolean hasUploadedCertificate;
+    public boolean hasGeneratedCertificate;
+    public String uploadedCertificateName;
 }
