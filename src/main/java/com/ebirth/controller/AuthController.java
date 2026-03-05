@@ -17,7 +17,7 @@ import java.util.Optional;
 @RestController
 @RequestMapping("/api/auth")
 @CrossOrigin(
-        originPatterns = {"http://localhost:5173", "http://localhost:3000", "https://*.onrender.com"},
+        origins = "https://ebirthsystem.netlify.app",
         allowCredentials = "true"
 )
 public class AuthController {

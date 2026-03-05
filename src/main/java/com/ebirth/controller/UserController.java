@@ -9,9 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/users")
-@CrossOrigin(
-        originPatterns = {"http://localhost:5173", "http://localhost:3000", "https://*.onrender.com"},
+@RequestMapping("/api/users")@CrossOrigin(
+        origins = "https://ebirthsystem.netlify.app",
         allowCredentials = "true"
 )
 public class UserController {
